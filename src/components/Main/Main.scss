@@ -1,0 +1,46 @@
+@import '../../styles/varibles.scss';
+
+.main {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .logout {
+    background-color: $primary;
+    color: white;
+    font-family: 'Poppins-Medium';
+    font-size: 12px;
+  }
+
+  .logout:hover {
+    background-color: $secondary;
+  }
+
+  .select {
+    width: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .loader {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .infinite-scroll{
+    padding: 20px 30px;
+    color: $primary;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .main{
+    .infinite-scroll{
+      height: 300px;
+    }
+  }
+}

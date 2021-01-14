@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import Main from './components/Main/Main'
+import { CircularProgress } from '@material-ui/core'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useAuth } from './providers/AuthProvider';
+import { environment } from './environments/environment';
+import './App.scss';
 
-function App() {
+const App = () => {
+  const { onLogin, isLoggedIn } = useAuth();
+  
+  useEffect(() => {
+    const promise = new Promise((resolve, reject) => {
+      setTimeout(() => resolve(environment.MOCK_JWT), 2500);  
+    });
+
+    promise.then(res => {
+      onLogin(res)
+    })
+  }, [isLoggedIn])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <ToastContainer />
+      {
+        isLoggedIn 
+          ? <Main />
+          : <div className="login-screen">
+              <p>Waiting to Login...</p>
+              <CircularProgress />
+            </div>
+      }
     </div>
   );
 }

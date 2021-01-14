@@ -1,0 +1,4 @@
+export const environment = {
+  apiPath: 'https://api.spacexdata.com/v4',
+  MOCK_JWT: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MTA1Njc2NTAsImV4cCI6MTY0MjE5ODA3NywiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20ifQ.zydhSxq0sJOz84D3Ja_hSruAkKyaQx69EHr2mA14ml0"
+};
